@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#14100a" />
+  <meta name="description" content="Solution Studio v2 — the Factory console. Market intel in, fireproof gates, build specs out." />
+  <title>Solution Studio v2 — Factory Console</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" id="brand-home"><span class="brand-mark">◈<span>.</span></span><span class="brand-name">Factory Console</span></a>
+      <div class="tag">Solution Studio v2 — operator only</div>
+      <div class="nav-label">PIPELINE</div>
+      <nav class="main-nav" id="market-nav"></nav>
+      <button class="add-btn" id="add-market-open">+ New market</button>
+    </aside>
+
+    <main class="main" id="main">
+      <section id="view-home">
+        <header class="topbar"><div><h1>The machine room</h1><p class="sub">Market intel → fireproof gates → build specs. Nothing ships without the loop.</p></div></header>
+        <div class="metrics" id="home-metrics"></div>
+        <div class="panel"><div class="panel-head"><h2>How it runs</h2></div>
+          <ol class="how">
+            <li><strong>Add a market</strong> — the niche you want to evolve.</li>
+            <li><strong>Teardown competitors</strong> — money model, customer engine, strengths, gaps.</li>
+            <li><strong>Draft product ideas</strong> from the gaps.</li>
+            <li><strong>Run the 7 fireproof gates.</strong> All pass → build spec.</li>
+            <li><strong>Ship it</strong> through Boomerang.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="view-market" hidden>
+        <header class="topbar">
+          <div><h1 id="m-name"></h1><p class="sub" id="m-niche"></p></div>
+          <button class="btn-small danger" id="m-delete">Delete market</button>
+        </header>
+        <div class="panel"><div class="panel-head"><h2>Competitor teardowns</h2><button class="btn-small" id="add-comp-open">+ Add competitor</button></div><div id="comp-list"></div></div>
+        <div class="panel"><div class="panel-head"><h2>Product ideas</h2><button class="btn-small" id="add-idea-open">+ New idea</button></div><div id="idea-list"></div></div>
+      </section>
+
+      <section id="view-spec" hidden>
+        <header class="topbar"><div><h1>Build spec</h1><p class="sub">Hand this to the Factory.</p></div><button class="btn-small" id="spec-back">← Back</button></header>
+        <div class="panel"><pre id="spec-text"></pre><button class="btn-solid" id="spec-copy">Copy spec</button></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal" hidden><div class="modal" role="dialog" aria-modal="true">
+    <h2 id="modal-title"></h2><form id="modal-form"><div id="modal-fields"></div>
+      <div class="modal-actions"><button type="button" class="btn-quiet" id="modal-cancel">Cancel</button><button type="submit" class="btn-solid">Save</button></div>
+    </form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
